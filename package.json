@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/mamba1202/lunzi/issues"
   },
-  "homepage": "https://github.com/mamba1202/lunzi#readme"
+  "homepage": "https://github.com/mamba1202/lunzi#readme",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
 }
