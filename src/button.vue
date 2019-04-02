@@ -1,11 +1,12 @@
 <template>
-  <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
+  <button class="g-button" :class="{[`icon-${iconPosition}`]: true}"
+  @click="$emit('click')">
     <!-- <svg v-if="icon" class="icon">
     <use :xlink:href="`#i-${icon}`"></use>
     </svg> -->
      <!-- <use :xlink:href="`#i-settings`"></use> -->
-     <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
-     <g-icon class="loading" name="loading"></g-icon>
+     <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
+     <g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -17,6 +18,10 @@ export default {
 
   props: {
     icon: {},  //值名
+    loading:{
+        type: Boolean,
+        default: false,
+      },
     iconPosition: {  //值配置
       type: String,
       default: "left",  //默认left
@@ -29,7 +34,12 @@ export default {
         return value !=='left' && value !=='right' ? false : true
       }
     }
-  }
+  },
+ /*  methods:{
+    x(){
+      this.$emit('click')
+    }
+  } */
 }
 </script>
 <style lang="scss">
