@@ -62,25 +62,12 @@ export default {
     border-color: var(--border-color-hover);
     background-color: var(--button-active-bg);
   }
-  &:focus {
-    outline: none;
-  }
-  > .icon {
-    order: 1;
-    margin-right: 0.1em;
-  }
-  > .content {
-    order: 2;
-  }
+  &:focus {outline: none;}
+  > .icon {order: 1; margin-right: 0.1em;}
+  > .content {order: 2;}
   &.icon-right {
-    > .icon {
-      order: 2;
-      margin-left: 0.1em;
-      margin-right: 0;
-    }
-    > .content {
-      order: 1;
-    }
+    > .icon {order: 2; margin-left: 0.1em; margin-right: 0;}
+    > .content {order: 1;}
   }
   .loading{
     animation: spin 2s infinite linear;
