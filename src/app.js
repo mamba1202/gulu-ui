@@ -105,7 +105,13 @@ const expect = chai.expect
         expect(spy).to.have.been.called() //已经被调用了
     })
 }
-
+// catch(error){
+//   window.errors=[error]
+//}finally{
+//   window.errors && window.errors.forEach((error)=>{
+//      console.error(error.message)
+//   })
+//}
 
 // {   //mock
 //     const Constructor = Vue.extend(Button)
