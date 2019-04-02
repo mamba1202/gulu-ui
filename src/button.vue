@@ -3,7 +3,10 @@
     class="g-button"
     :class="{[`icon-${iconPosition}`]: true}"
   >
-    <svg v-if="icon" class="icon">
+    <svg
+      v-if="icon"
+      class="icon"
+    >
       <use :xlink:href="`#i-${icon}`"></use>
       <!-- <use :xlink:href="`#i-settings`"></use> -->
     </svg>
@@ -14,8 +17,24 @@
 </template>
 <script>
 export default {
-  props: ["icon", "iconPosition"]
-};
+  //props: ["icon", "iconPosition"]
+
+  props: {
+    icon: {},  //值名
+    iconPosition: {  //值配置
+      type: String,
+      default: "left",  //默认left
+      validator (value){
+        // if(value !=='left' && value !=='right'){
+        //   return false
+        // }else{
+        //   return true
+        // }
+        return value !=='left' && value !=='right' ? false : true
+      }
+    }
+  }
+}
 </script>
 <style lang="scss">
 .g-button {
@@ -36,12 +55,22 @@ export default {
   &:focus {
     outline: none;
   }
-  >.icon {order: 1; margin-right: .1em;}
-  >.content { order: 2;}
-   &.icon-right {
-  >.icon{order: 2; margin-left: .1em; margin-right: 0;}
-  >.content {order: 1;}
-   }
+  > .icon {
+    order: 1;
+    margin-right: 0.1em;
+  }
+  > .content {
+    order: 2;
+  }
+  &.icon-right {
+    > .icon {
+      order: 2;
+      margin-left: 0.1em;
+      margin-right: 0;
+    }
+    > .content {
+      order: 1;
+    }
+  }
 }
-
 </style>
