@@ -8,6 +8,7 @@
 <script>
 import "./svg.js"
 export default {
+  name: "lunzi-icon",
 props: ['name']
 }
 </script>
