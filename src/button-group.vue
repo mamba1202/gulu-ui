@@ -5,6 +5,7 @@
 </template>
 <script>
 export default {
+  name: "lunzi-button-group",
   mounted(){
  for(let node of this.$el.children){
    let name = node.nodeName.toLowerCase()
