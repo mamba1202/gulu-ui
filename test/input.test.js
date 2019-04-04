@@ -111,11 +111,11 @@ describe('Input', () => {
     it('接收 disabled', () => {
       vm = new Constructor({
         propsData: {
-          disabled: true
+          disabled: false
         }
       }).$mount()
       const inputElement = vm.$el.querySelector('input')
-      expect(inputElement.disabled).to.equal(true)
+      expect(inputElement.disabled).to.equal(false)
     })
     it('接收 readonly', () => {
       vm = new Constructor({
@@ -153,7 +153,7 @@ describe('Input', () => {
           vm.$on(eventName, callback)
           //触发input的change 事件
           let event = new Event(eventName);
-          Object.defineProperty(
+          Object.defineProperty( //target只读属性  模拟'value'
             event, 'target', {
               value: {value: 'hi'}, enumerable: true
             }
