@@ -36,7 +36,14 @@
 <style>
 .box{
     margin: 20px;
-}</style>
+}
+.box-1{
+    border-radius: 2px;
+}
+.box-1:focus{
+    outline: none;
+}
+</style>
 
 <body>
     <div id="app">
@@ -44,7 +51,17 @@
         <g-input value="湖人" disabled></g-input>
         <g-input value="火箭" readonly></g-input>
         <g-input value="凯尔特人"></g-input>
-        <g-input value="马" error="姓名不能少于两个字"></g-input>
+        </div>
+        <div class="box">
+            <g-input value="马" error="姓名不能少于两个字"></g-input>
+        </div>
+        <div class="box">
+            <g-input value="马刺" @change="inputChange"></g-input>
+        </div>
+        <div class="box">
+            <g-input v-model="message"></g-input>
+            <p>{{message}}</p>
+            <button class="box-1" @click="message +=1">+1</button>
         </div>
 
             <div class="box">
