@@ -1,7 +1,7 @@
 <template>
   <div
     class="row"
-    :style="{marginLeft: -gutter/2+'px', marginRight: -gutter/2+'px', }"
+    :style="rowStyle"
   >
     <slot></slot>
   </div>
@@ -14,12 +14,21 @@ export default {
       type: [Number, String]
     }
   },
-  mounted(){
-    this.$children.forEach((vm)=>{
-        vm.gutter = this.gutter
-    })
-}
-}
+  computed: {
+    rowStyle() {
+        let{gutter} = this
+      return {
+        marginLeft: -gutter / 2 + "px",
+        marginRight: -gutter / 2 + "px"
+      }
+    }
+  },
+  mounted() {
+    this.$children.forEach(vm => {
+      vm.gutter = this.gutter;
+    });
+  }
+};
 </script>
 <style scoped lang="scss">
 .row {

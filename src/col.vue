@@ -1,12 +1,10 @@
 <template>
   <div
     class="col"
-    :class="[`col-${span}`, offest && `offest-${offest}`]"
-    :style="{paddingLeft: gutter/2+'px',paddingRight: gutter/2+'px'}"
+    :class="colClass"
+    :style="colStyle"
   >
-  <div style="border: 1px solid green; height: 100px;">
- <slot></slot>
-  </div> 
+      <slot></slot>
   </div>
 </template>
 <script>
@@ -18,14 +16,29 @@ export default {
     },
     offest: {
       type: [Number, String]
-  }
-},
-data(){
-    return{
-        gutter: 0
     }
-}
-}
+  },
+  data() {
+    return {
+      gutter: 0
+    };
+  },
+  computed: {
+    colClass() {
+    let { span, offest } = this
+     return [
+      span && `col-${span}`,
+      offest && `offest-${offest}`
+      ]
+    },
+    colStyle() {
+      return {
+        paddingLeft: this.gutter / 2 + "px",
+        paddingRight: this.gutter / 2 + "px"
+      };
+    }
+  }
+};
 </script>
 <style scoped lang="scss">
 .col {
@@ -39,7 +52,7 @@ data(){
   $class-prefix: offest-;
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {
-     margin-left: ($n / 24) * 100%;
+      margin-left: ($n / 24) * 100%;
     }
   }
 }
