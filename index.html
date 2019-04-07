@@ -34,23 +34,59 @@
     }
 </style>
 <style>
-.box{
-    margin: 20px;
-}
-.box-1{
-    border-radius: 2px;
-}
-.box-1:focus{
-    outline: none;
-}
+    .box {
+        margin: 20px;
+    }
+
+    .box-1 {
+        border-radius: 2px;
+    }
+
+    .box-1:focus {
+        outline: none;
+    }
 </style>
 
 <body>
     <div id="app">
+        <g-row>
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+        </g-row>
+        <g-row>
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+            <g-col>3</g-col>
+        </g-row>
+        <g-row>
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+            <g-col>3</g-col>
+            <g-col>4</g-col>
+        </g-row>
+        <g-row>
+            <g-col span="2">1</g-col>
+            <g-col span="20" offest="2">11</g-col>
+        </g-row>
+        <g-row>
+            <g-col span="4">4</g-col>
+            <g-col span="18" offest="2">18</g-col>
+        </g-row>
+        <g-row>
+            <g-col span="4">4</g-col>
+            <g-col span="8" offest="2">18</g-col>
+            <g-col span="8" offest="2">18</g-col>
+        </g-row>
+
+
+
+
+
+        <hr>
         <div class="box">
-        <g-input value="湖人" disabled></g-input>
-        <g-input value="火箭" readonly></g-input>
-        <g-input value="凯尔特人"></g-input>
+            <g-input value="湖人" disabled></g-input>
+            <g-input value="火箭" readonly></g-input>
+            <g-input value="凯尔特人"></g-input>
         </div>
         <div class="box">
             <g-input value="马" error="姓名不能少于两个字"></g-input>
@@ -64,32 +100,32 @@
             <button class="box-1" @click="message +=1">+1</button>
         </div>
 
-            <div class="box">
-                    <g-button :loading="loading1" @click="loading1 = !loading1 ">
+        <div class="box">
+            <g-button :loading="loading1" @click="loading1 = !loading1 ">
 
-                            按钮</g-button>
-                        <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">
-                
-                            按钮</g-button>
-                        <g-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">
-                
-                            按钮</g-button>
-                            <g-icon name="download"></g-icon>
-                            
-                            <g-button-group>
-                                <div>
-                                        <g-button icon="left">上一页</g-button>
-                                        <g-button>更多</g-button>
-                                        <g-button icon="right" icon-position="right">下一页</g-button>
-                                </div>
-                              
-                            </g-button-group>
-            </div>
-        
+                按钮</g-button>
+            <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">
+
+                按钮</g-button>
+            <g-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">
+
+                按钮</g-button>
+            <g-icon name="download"></g-icon>
+
+            <g-button-group>
+                <div>
+                    <g-button icon="left">上一页</g-button>
+                    <g-button>更多</g-button>
+                    <g-button icon="right" icon-position="right">下一页</g-button>
+                </div>
+
+            </g-button-group>
+        </div>
+
     </div>
 
-   
-   
+
+
     <script src="./src/app.js"></script>
 </body>
 
