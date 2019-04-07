@@ -27,7 +27,6 @@ export default {
     offest: {
       type: [Number, String]
     },
-    phone: { type: Object, validator },
     ipad: { type: Object, validator },
     narrowPc: { type: Object, validator },
     pc: { type: Object, validator },
@@ -38,17 +37,31 @@ export default {
       gutter: 0
     };
   },
+  methods: {
+    creteClasses(obj, str = "") {
+      if (!obj) {
+        return [];
+      }
+      let array = [];
+      if (obj.span) {
+        array.push(`col-${str}${obj.span}`);
+      }
+      if (obj.offest) {
+        array.push(`col-${str}${obj.offest}`);
+      }
+      return array;
+    }
+  },
   computed: {
     colClass() {
-      let { span, offest,phone, ipad, narrowPc, pc, widePc } = this;
+      let { span, offest, ipad, narrowPc, pc, widePc } = this;
+      let creteClasses = this.creteClasses;
       return [
-        span && `col-${span}`,
-        offest && `offest-${offest}`,
-        ...(phone ? [`col-phone-${phone.span}`] : []),
-        ...(ipad ? [`col-ipad-${ipad.span}`] : []),
-        ...(narrowPc ? [`col-narrow-pc-${narrowPc.span}`] : []),
-        ...(pc ? [`col-pc-${pc.span}`] : []),
-        ...(widePc ? [`col-wide-pc-${widePc.span}`] : [])
+        ...creteClasses({ span, offest }),
+        ...creteClasses(ipad, "ipad-"),
+        ...creteClasses(narrowPc, "narrow-pc-"),
+        ...creteClasses(pc, "pc-"),
+        ...creteClasses(widePc, "wide-pc-")
       ];
     },
     colStyle() {
@@ -75,20 +88,6 @@ export default {
       margin-left: ($n / 24) * 100%;
     }
   }
-  @media (max-width: 576px) {
-    $class-prefix: col-phone-;
-    @for $n from 1 through 24 {
-      &.#{$class-prefix}#{$n} {
-        width: ($n / 24) * 100%;
-      }
-    }
-    $class-prefix: offest-phone-;
-    @for $n from 1 through 24 {
-      &.#{$class-prefix}#{$n} {
-        margin-left: ($n / 24) * 100%;
-      }
-    }
-  }
   @media (min-width: 577px) {
     $class-prefix: col-ipad-;
     @for $n from 1 through 24 {
@@ -103,7 +102,7 @@ export default {
       }
     }
   }
-  @media (min-width: 769px){
+  @media (min-width: 769px) {
     $class-prefix: col-narrow-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
@@ -117,7 +116,7 @@ export default {
       }
     }
   }
-  @media (min-width: 993px){
+  @media (min-width: 993px) {
     $class-prefix: col-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
@@ -131,7 +130,7 @@ export default {
       }
     }
   }
-  @media (min-width: 1201px){
+  @media (min-width: 1201px) {
     $class-prefix: col-wide-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
