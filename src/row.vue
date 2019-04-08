@@ -14,7 +14,7 @@ export default {
     gutter: {
       type: [Number, String]
     },
-    algin: {
+    align: {
       type: String,
       validator(value) {
         return ["left", "right", "center"].includes(value);
@@ -30,8 +30,8 @@ export default {
       }
     },
     rowClass() {
-      let { algin } = this;
-      return [algin && `algin-${algin}`];
+      let { align } = this;
+      return [align && `align-${align}`];
     }
   },
   mounted() {
@@ -45,13 +45,13 @@ export default {
 .row {
   display: flex;
   flex-wrap: wrap;
-  &.algin-left {
+  &.align-left {
     justify-content: flex-start;
   }
-   &.algin-right{
+   &.align-right{
     justify-content: flex-end;
   }
-  &.algin-center {
+  &.align-center {
     justify-content: center;
   }
 }
