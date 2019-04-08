@@ -8,12 +8,12 @@
   </div>
 </template>
 <script>
-let validator = value => {
-  let keys = Object.keys(value);
-  let valid = true;
+let validator = (value) => {
+  let keys = Object.keys(value)
+  let valid = true
   keys.forEach(key => {
-    if (!["span", "offest"].includes(key)) {
-      valid = false;
+    if (!["span", "offset"].includes(key)) {
+      valid = false
     }
   });
   return valid;
@@ -24,7 +24,7 @@ export default {
     span: {
       type: [Number, String]
     },
-    offest: {
+    offset: {
       type: [Number, String]
     },
     ipad: { type: Object, validator },
@@ -46,18 +46,18 @@ export default {
       if (obj.span) {
         array.push(`col-${str}${obj.span}`);
       }
-      if (obj.offest) {
-        array.push(`col-${str}${obj.offest}`);
+      if (obj.offset) {
+        array.push(`offset-${str}${obj.offset}`);
       }
       return array;
     }
   },
   computed: {
     colClass() {
-      let { span, offest, ipad, narrowPc, pc, widePc } = this;
+      let { span, offset, ipad, narrowPc, pc, widePc } = this;
       let creteClasses = this.creteClasses;
       return [
-        ...creteClasses({ span, offest }),
+        ...creteClasses({ span, offset }),
         ...creteClasses(ipad, "ipad-"),
         ...creteClasses(narrowPc, "narrow-pc-"),
         ...creteClasses(pc, "pc-"),
@@ -75,14 +75,14 @@ export default {
 </script>
 <style scoped lang="scss">
 .col {
-  width: 50%;
+  //width: 50%;
   $class-prefix: col-;
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {
       width: ($n / 24) * 100%;
     }
   }
-  $class-prefix: offest-;
+  $class-prefix: offset-;
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {
       margin-left: ($n / 24) * 100%;
@@ -95,7 +95,7 @@ export default {
         width: ($n / 24) * 100%;
       }
     }
-    $class-prefix: offest-ipad-;
+    $class-prefix: offset-ipad-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         margin-left: ($n / 24) * 100%;
@@ -109,7 +109,7 @@ export default {
         width: ($n / 24) * 100%;
       }
     }
-    $class-prefix: offest-narrow-pc-;
+    $class-prefix: offset-narrow-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         margin-left: ($n / 24) * 100%;
@@ -123,7 +123,7 @@ export default {
         width: ($n / 24) * 100%;
       }
     }
-    $class-prefix: offest-pc-;
+    $class-prefix: offset-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         margin-left: ($n / 24) * 100%;
@@ -137,7 +137,7 @@ export default {
         width: ($n / 24) * 100%;
       }
     }
-    $class-prefix: offest-wide-pc-;
+    $class-prefix: offset-wide-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         margin-left: ($n / 24) * 100%;
