@@ -44,22 +44,21 @@ new Vue({
         //         }
         //     }
         // })
-        this.$toast('我是message', {
-            position: 'middle',
-            enableHtml: false,
-            closeButton: {
-                text: '已充值',
-                callback() {
-                    console.log('用户说他知道了')
-                }
-            },
-            autoClose: false,
-            autoCloseDelay: 3
-        })
     },
     methods: {
         showToast() {
-
+            this.$toast(`哈哈${parseInt(Math.random()*100)},我是message`, {
+                position: 'middle',
+                enableHtml: false,
+                closeButton: {
+                    text: '已充值',
+                    callback() {
+                        console.log('用户说他知道了')
+                    }
+                },
+                autoClose: false,
+                autoCloseDelay: 3
+            })
         }
     }
 })
