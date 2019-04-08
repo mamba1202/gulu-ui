@@ -60,6 +60,21 @@
             border: 1px solid #666;
             min-height: 100px;
         }
+.sider{
+    background: #333;
+    width: 200px;
+}
+.header{
+    background: #999;
+    height: 100px;
+}
+.footer{
+    background: #ccc;
+    height: 50px;
+}
+.sider.fade-enter, .sider.fade-leave-to{
+  margin-left: -150px;
+}
     </style>
     <div id="app">
         <!-- <div style="border: 1px solid black">
@@ -104,9 +119,9 @@
             <g-sider class="demo">sider</g-sider>
 
             <g-layout>
-                <g-header class="demo">header</g-header>
-                <g-content class="demo">content</g-content>
-                <g-footer class="demo">footer</g-footer>
+                <g-header>header</g-header>
+                <g-content>content</g-content>
+                <g-footer>footer</g-footer>
             </g-layout>
         </g-layout>
         <hr>
