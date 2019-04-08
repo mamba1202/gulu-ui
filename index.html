@@ -48,11 +48,17 @@
 </style>
 
 <body>
-    <style>
+    <!--<style>
         .demo {
             background: #ddd;
             border: 1px solid #666;
             height: 100px;
+        }
+    </style>-->
+    <style>
+        .demo {
+            border: 1px solid #666;
+            min-height: 100px;
         }
     </style>
     <div id="app">
@@ -82,10 +88,31 @@
             <g-col span="8" offest="2">18</g-col>
             <g-col span="8" offest="2">18</g-col>
         </g-row>
-    </div>
--->
+    </div>-->
+
+        <!--<g-layout style="height: 100vh;">
+            <g-header class="demo">header</g-header>
+        <g-layout>
+            <g-sider class="demo">sider</g-sider>
+            <g-content class="demo">content</g-content>
+        </g-layout>
+            
+            <g-footer class="demo">footer</g-footer>
+        </g-layout>-->
+
+        <g-layout style="height: 100vh;">
+            <g-sider class="demo">sider</g-sider>
+
+            <g-layout>
+                <g-header class="demo">header</g-header>
+                <g-content class="demo">content</g-content>
+                <g-footer class="demo">footer</g-footer>
+            </g-layout>
+        </g-layout>
+        <hr>
+
         <g-row algin="right">
-            <g-col span="23" offest="1" :narrow-pc="{span:12,offest:12}" >
+            <g-col span="23" offest="1" :narrow-pc="{span:12,offest:12}">
                 <div class="demo"></div>
             </g-col>
             <g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
@@ -100,7 +127,7 @@
             <g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
                 <div class="demo"></div>
             </g-col>
-            <g-col span="20"  offset="4" :ipad="{span:12}" :narrow-pc="{span:8}">
+            <g-col span="20" offset="4" :ipad="{span:12}" :narrow-pc="{span:8}">
                 <div class="demo"></div>
             </g-col>
         </g-row>
