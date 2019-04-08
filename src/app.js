@@ -33,21 +33,33 @@ new Vue({
         message: 'hi',
     },
     created() {
-        this.$toast('hello',{
-            enableHtml: false
-        })
-        // this.$toast('我是message',{
-        //     closeButton:{
-        //         text:'知道了',
-        //         callback(){
+        // this.$toast('hello',{
+        //     enableHtml: false
+        // })
+        // this.$toast('我是message', {
+        //     closeButton: {
+        //         text: '已充值',
+        //         callback() {
         //             console.log('用户说他知道了')
         //         }
         //     }
         // })
+        this.$toast('我是message', {
+            position: 'middle',
+            enableHtml: false,
+            closeButton: {
+                text: '已充值',
+                callback() {
+                    console.log('用户说他知道了')
+                }
+            },
+            autoClose: false,
+            autoCloseDelay: 3
+        })
     },
     methods: {
         showToast() {
-           
+
         }
     }
 })
