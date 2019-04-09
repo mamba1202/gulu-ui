@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-    name: 'tabs-body',
+    name: 'lunzi-tabs-body',
     inject:['eventBus'],
     created(){
         //this.$emit('update: selected','tabs-head抛出的数据')

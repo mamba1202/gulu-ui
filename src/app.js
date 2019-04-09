@@ -34,6 +34,12 @@ Vue.component('g-tabs-item', TabsItem)
 Vue.component('g-tabs-body', TabsBody)
 Vue.component('g-tabs-pane', TabsPane)
 Vue.use(plugin)
+
+import createElement from 'vue'
+
+const h = createElement
+
+
 new Vue({
     el: '#app',
     data: {
