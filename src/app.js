@@ -46,9 +46,19 @@ new Vue({
         // })
     },
     methods: {
-        showToast() {
-            this.$toast(`哈哈${parseInt(Math.random()*100)},我是message`, {
-                position: 'middle',
+        showToast1() {
+            this.showToast('top')
+        },
+        showToast2() {
+            this.showToast('bottom')
+        },
+        showToast3() {
+            this.showToast('middle')
+        },
+        showToast(position) {
+            this.$toast(`哈哈${parseInt(Math.random() * 100)},我是message`, {
+                //position: 'bottom',
+                position,
                 enableHtml: false,
                 closeButton: {
                     text: '已充值',
