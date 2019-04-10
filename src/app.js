@@ -16,6 +16,9 @@ import TabsHead from './tabs-head.vue'
 import TabsItem from './tabs-item.vue'
 import TabsBody from './tabs-body.vue'
 import TabsPane from './tabs-pane.vue'
+import Popover from './popover.vue'
+import Collapse from './collapse.vue'
+import CollapseItem from './collapse-item.vue'
 
 Vue.component('g-button', Button)  //全局的g-button组件
 Vue.component('g-icon', Icon)
@@ -33,6 +36,9 @@ Vue.component('g-tabs-head', TabsHead)
 Vue.component('g-tabs-item', TabsItem)
 Vue.component('g-tabs-body', TabsBody)
 Vue.component('g-tabs-pane', TabsPane)
+Vue.component('g-popver', Popover)
+Vue.component('g-collapse', Collapse)
+Vue.component('g-collapse-item', CollapseItem)
 Vue.use(plugin)
 
 import createElement from 'vue'
