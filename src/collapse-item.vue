@@ -1,9 +1,15 @@
 <template>
   <div class="collapseItem">
-    <div class="title" @click="open=!open">
+    <div
+      class="title"
+      @click="toggle"
+    >
       {{title}}
     </div>
-    <div class="content" v-if="open">
+    <div
+      class="content"
+      v-if="open"
+    >
       <slot></slot>
     </div>
   </div>
@@ -11,15 +17,46 @@
 <script>
 export default {
   name: "LunziCollapseIem",
-  data(){
-    return{
+  inject: ["eventBus"],
+  data() {
+    return {
       open: false
-    }
+    };
   },
   props: {
     title: {
       type: String,
       required: true
+    },
+    name:{
+      type: String,
+      required: true
+    }
+  },
+  mounted() {
+    this.eventBus &&
+      this.eventBus.$on("update:selected", name => {
+        if (name !== this.name) {
+          this.close();
+        } else {
+          this.show();
+        }
+      });
+  },
+  methods: {
+    toggle() {
+      if (this.open) {
+        this.open = false;
+      } else {
+        //this.open = true;
+        this.eventBus && this.eventBus.$emit("update:selected", this.name);
+      }
+    },
+    close() {
+      this.open = false;
+    },
+    show() {
+      this.open = true;
     }
   }
 };
@@ -46,13 +83,13 @@ export default {
       border-top-right-radius: $border-radius;
     }
   }
-   &:last-child {
+  &:last-child {
     > .title:last-child {
       border-bottom-left-radius: $border-radius;
       border-bottom-right-radius: $border-radius;
     }
   }
-  >.content{
+  > .content {
     padding: 8px;
   }
 }
