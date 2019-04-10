@@ -30,13 +30,14 @@ export default {
 <style lang="scss" scoped>
 $tab-height: 40px;
 $blue: blue;
+$border-color: #ddd;
 .tabs-head {
   display: flex;
   height: $tab-height;
   justify-content: flex-start;
   // align-items: center;
-  border: 1px solid red;
   position: relative;
+  border-bottom: 1px solid $border-color;
   > .line {
     position: absolute;
     bottom: 0;
@@ -45,6 +46,9 @@ $blue: blue;
   }
   > .action-wrapper {
     margin-left: auto;
+    display: flex;
+    align-content: center;
+    padding: 1em;
   }
 }
 </style>
