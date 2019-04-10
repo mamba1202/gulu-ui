@@ -46,9 +46,9 @@ $border-color: #ddd;
   }
   > .action-wrapper {
     margin-left: auto;
-    display: flex;
-    align-content: center;
-    padding: 1em;
+   // display: flex;
+    //align-content: center;
+   // padding: 1em;
   }
 }
 </style>

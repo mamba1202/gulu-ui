@@ -32,7 +32,9 @@ export default {
   },
   mounted() {
     // this.$emit('update:selected', 'xxx')
-
+if(this.$children.length === 0){
+  throw new Error('tabs的子组件应该是tabs-head和tabs-nav,但你没有写子组件 ')
+}
     this.$children.forEach((vm) => {
       if (vm.$options.name === "LunziTabsHead") {
         vm.$children.forEach((childVm) => {
