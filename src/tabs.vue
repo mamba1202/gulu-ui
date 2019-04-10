@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import Vue from "vue"
+import Vue from "vue";
 export default {
   name: "lunzi-tabs",
   props: {
@@ -32,7 +32,20 @@ export default {
   },
   mounted() {
     // this.$emit('update:selected', 'xxx')
-    this.eventBus.$emit('update:selected',this.selected)
+
+    this.$children.forEach((vm) => {
+      if (vm.$options.name === "LunziTabsHead") {
+        vm.$children.forEach((childVm) => {
+          if (
+            childVm.$options.name === "LunziTabsItem" &&
+            childVm.name === this.selected
+          ) {
+              //console.log(item.$el)
+            this.eventBus.$emit("update:selected", this.selected, childVm);// this.selected--name
+          }
+        });
+      }
+    });
   }
 };
 </script>

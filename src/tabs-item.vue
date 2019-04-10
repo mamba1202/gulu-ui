@@ -9,7 +9,7 @@
 </template>
 <script>
 export default {
-  name: "lunzi-tabs-item",
+  name: "LunziTabsItem",
   inject: ["eventBus"],
   data() {
     return {
@@ -44,21 +44,23 @@ export default {
   },
   methods: {
     xxx() {
-      this.eventBus.$emit("update:selected", this.name);
+      this.eventBus.$emit("update:selected", this.name,this);
     }
   }
 };
 </script>
 <style lang="scss" scoped>
+ $blue: blue;
 .tabs-item {
   flex-shrink: 0;
   padding: 0 1em;
   cursor: pointer;
   display: flex;
+  height: 100%;
   align-items: center;
-  border: 1px solid greenyellow;
   &.active {
-    background: red;
+    color: $blue;
+    font-weight: bold;
   }
 }
 </style>
