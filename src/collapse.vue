@@ -1,7 +1,6 @@
 <template>
   <div
     class="collapse"
-    single
   >
     <slot></slot>
   </div>
@@ -33,6 +32,10 @@ export default {
     this.eventBus.$emit("update:selected", this.selected);
     this.eventBus.$on("update:selected", (name) => {
       this.$emit("update:selected", name);
+    })
+    this.$children.forEach((vm)=>{
+        console.log(vm)
+        vm.single=this.single
     })
   }
 };

@@ -3,7 +3,7 @@
     <div
       class="title"
       @click="toggle"
-    >
+    >{{single}}
       {{title}}
     </div>
     <div
@@ -20,7 +20,8 @@ export default {
   inject: ["eventBus"],
   data() {
     return {
-      open: false
+      open: false,
+      single: false
     };
   },
   props: {
@@ -28,7 +29,7 @@ export default {
       type: String,
       required: true
     },
-    name:{
+    name: {
       type: String,
       required: true
     }
@@ -37,7 +38,9 @@ export default {
     this.eventBus &&
       this.eventBus.$on("update:selected", name => {
         if (name !== this.name) {
-          this.close();
+          if (this.single) {
+            this.close();
+          }
         } else {
           this.show();
         }
