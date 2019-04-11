@@ -54,7 +54,7 @@ new Vue({
        // loading3: false,
        // message: 'hi',
        // selectedTab: 'sports'
-       selectedTab: '2'
+       selectedTab: ['2','1']
     },
     created() {
         // this.$toast('hello',{

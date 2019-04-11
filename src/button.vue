@@ -69,10 +69,10 @@ export default {
   }
 }
 .g-button {
-  font-size: var(--font-size);
+  font-size:32px;;
   height: var(--button-height);
   padding: 0 1em;
-  border-radius: var(--border-radius);
+  border-radius: 4px;
   border: 1px solid var(-border-color);
   background: var(--button-bg);
   display: inline-flex;
@@ -80,7 +80,7 @@ export default {
   align-items: center;
   vertical-align: middle;
   &:hover {
-    border-color: var(--border-color-hover);
+    border-color:#666;
     background-color: var(--button-active-bg);
   }
   &:focus {
