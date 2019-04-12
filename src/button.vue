@@ -70,18 +70,18 @@ export default {
 }
 .g-button {
   font-size:32px;;
-  height: var(--button-height);
+  height: 32px;
   padding: 0 1em;
   border-radius: 4px;
-  border: 1px solid var(-border-color);
-  background: var(--button-bg);
+  border: 1px solid #999;
+  background: white;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
   &:hover {
     border-color:#666;
-    background-color: var(--button-active-bg);
+    background-color: #eee;
   }
   &:focus {
     outline: none;
