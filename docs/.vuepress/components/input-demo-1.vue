@@ -16,7 +16,6 @@
 </template>
 <script>
   import GInput from '../../../src/input'
-
   export default {
     components: {GInput},
     data () {

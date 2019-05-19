@@ -1,17 +1,13 @@
 ---
 title: 安装
 ---
-
-# 安装
-
-本章节待完善
-
-```bash
-npm install gulu
 ```
-
-或
-
-```bash
-yarn add gulu
+npm install gulu-ui
 ```
+或者
+```
+yarn add gulu-ui
+```
+::: danger
+目前该 UI 仍然是半成品，切勿在生产环境中使用
+:::

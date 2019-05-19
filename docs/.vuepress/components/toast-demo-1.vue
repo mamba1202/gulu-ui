@@ -26,15 +26,12 @@
   * {
     box-sizing: border-box;
   }
-
 </style>
 <script>
   import plugin from '../../../src/plugin'
-  import GButton from '../../../src/button/button'
+  import GButton from '../../../src/button'
   import Vue from 'vue'
-
   Vue.use(plugin)
-
   export default {
     components: {GButton},
     data () {

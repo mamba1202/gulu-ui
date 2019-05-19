@@ -1,26 +1,21 @@
 ---
 title: 快速上手
 ---
-
-# 快速上手
-
-本章节待完善
-
 ## 安装
+参考[安装]()章节
+## 引入咕噜UI
+```
+import {Button,Icon} from "gulu-ui"
+import "gulu-ui/dist/index.css"
 
-请参考 [安装](../install/) 章节
-
-
-## Hello World
-
-```javascript
-import {Button} from 'gulu'
-import Vue from 'vue'
-
-new Vue({
-  el: '#app',
+export default {
+  name: 'app',
   components: {
-    'g-button':Button
+    "g-button": Button,
+    "g-icon": Icon,
   }
-})
+```
+## 添加CSS样式
+```
+*, *::before, *::after{box-sizing: border-box;}
 ```

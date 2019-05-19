@@ -17,7 +17,6 @@
 </template>
 <script>
   import GInput from '../../../src/input'
-
   export default {
     components: {GInput},
     data () {
@@ -27,7 +26,6 @@
           data:{
             value: '1'
           }
-
           <g-input v-model="value"></g-input>
           <div>
             value: {{value}}
