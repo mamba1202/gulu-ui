@@ -1,24 +1,9 @@
 <template>
-  <button
-    class="g-button"
-    :class="{[`icon-${iconPosition}`]: true}"
-    @click="$emit('click')"
-  >
-    <!-- <svg v-if="icon" class="icon">
-    <use :xlink:href="`#i-${icon}`"></use>
-    </svg> -->
-    <!-- <use :xlink:href="`#i-settings`"></use> -->
-    <g-icon
-      class="icon"
-      v-if="icon && !loading"
-      :name="icon"
-    ></g-icon>
-    <g-icon
-      class="loading icon"
-      v-if="loading"
-      name="loading"
-    ></g-icon>
-    <div class="content">
+  <button class="g-button" :class="{[`icon-${iconPosition}`]: true}"
+    @click="$emit('click')">
+    <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
+    <g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
+    <div class="g-button-content">
       <slot></slot>
     </div>
   </button>
@@ -33,7 +18,7 @@ export default {
   },
   //props: ["icon", "iconPosition"]
   props: {
-    icon: {}, //值名
+    icon: {},     //后面是值得配置
     loading: {
       type: Boolean,
       default: false
@@ -43,23 +28,30 @@ export default {
       type: String,
       default: "left", //默认left
       validator(value) {
-        // if(value !=='left' && value !=='right'){
-        //   return false
-        // }else{
-        //   return true
-        // }
         return value !== "left" && value !== "right" ? false : true;
       }
     }
   }
-  /*  methods:{
-    x(){
-      this.$emit('click')
-    }
-  } */
 };
+
 </script>
 <style lang="scss" scoped>
+$border-color-hover: #666;
+$border-color: #999;
+$border-color-light: lighten($border-color, 30%);
+$border-radius: 4px;
+$box-shadow-color: rgba(0, 0, 0, 0.5);
+$button-active-bg: #eee;
+$button-bg: white;
+$button-height: 32px;
+$color: #333;
+$light-color: #666;
+$font-size: 14px;
+$small-font-size: 12px;
+$input-height: 32px;
+$red: #f1453d;
+$grey: #eee;
+$blue: #4a90e2;
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -69,19 +61,19 @@ export default {
   }
 }
 .g-button {
-  font-size:32px;;
-  height: 32px;
+  font-size: $font-size;
+  height: $button-height;
   padding: 0 1em;
-  border-radius: 4px;
-  border: 1px solid #999;
-  background: white;
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+  background: $button-bg;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
   &:hover {
-    border-color:#666;
-    background-color: #eee;
+    border-color: $border-color-hover;
+    background-color: $button-bg;
   }
   &:focus {
     outline: none;
@@ -90,7 +82,7 @@ export default {
     order: 1;
     margin-right: 0.1em;
   }
-  > .content {
+  > .g-button-content {
     order: 2;
   }
   &.icon-right {
@@ -99,7 +91,7 @@ export default {
       margin-left: 0.1em;
       margin-right: 0;
     }
-    > .content {
+    > .g-button-content {
       order: 1;
     }
   }

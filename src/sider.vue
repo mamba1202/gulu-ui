@@ -7,7 +7,7 @@
       <slot></slot>
       <button @click="visible=false">close</button>
     </div>
-    <transition>
+    </transition>
 </template>
 
 <script>

@@ -88,7 +88,7 @@ $red: #f1453d;
     }
     &[disabled],
     &[readonly] {
-      border: #bbb;
+      border: black;
       color: #bbb;
       cursor: not-allowed;
     }
