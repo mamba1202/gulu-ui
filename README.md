@@ -25,7 +25,7 @@
     ```
     yarn add gulu-ui
     ```
-3. 引入lunzi
+3. 引入gulu-ui
     ```
     import {Button} from "gulu-ui"
     import "gulu-ui/dist/index.css"
