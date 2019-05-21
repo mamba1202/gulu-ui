@@ -10,38 +10,37 @@
 咕噜就是轮子，这是我在学习 Vue 的过程中尝试写的一个 UI 框架（造的轮子），希望对你有用是我在学习Vue过程中做的一个UI框架
 
 ## 开始使用
-1. 添加CSS样式
-  使用本框架前，请在CSS中开启bordr-box
+1. 添加CSS样式，使用本框架前，请在CSS中开启bordr-box
 
-  ```
-  *, *::before, *::after{box-sizing: border-box;}
-  ```
-  IE8 及以上浏览器都支持此样式
+    ```
+     *, *::before, *::after{box-sizing: border-box;}
+    ```
+     IE8 及以上浏览器都支持此样式
 
 2. 安装 gulu-ui
-  ```
-  npm install  gulu-ui
-  ```
-  或者
-  ```
-  yarn add gulu-ui
-  ```
+    ```
+    npm install  gulu-ui
+    ```
+    或者
+    ```
+    yarn add gulu-ui
+    ```
 3. 引入lunzi
-  ```
-  import {Button} from "gulu-ui"
-  import "gulu-ui/dist/index.css"
+    ```
+    import {Button} from "gulu-ui"
+    import "gulu-ui/dist/index.css"
 
-  export default {
-    name: 'app',
-    components: {
-        "g-button": Button,
-      }
-  }
-  ```
+    export default {
+      name: 'app',
+      components: {
+          "g-button": Button,
+        }
+    }
+    ```
 4. 引入svg symbols(如需更多icon请自动引入)
-  ```
-  <script src="//at.alicdn.com/t/font_1121333_q3158vk42o.js"></script>
-  ```
+    ```
+    <script src="//at.alicdn.com/t/font_1121333_q3158vk42o.js"></script>
+    ```
 
 ## 文档
 
