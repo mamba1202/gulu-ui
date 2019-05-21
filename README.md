@@ -1,6 +1,8 @@
-## 咕噜UI -用Vue写一个UI组件库
+# 咕噜UI -用Vue写一个UI组件库
+咕噜UI 是一个好用的UI组件，提供一些常用组件，适合移动和PC端使用
+组件: 按钮、输入框、网格、布局、Toast、Tabs、Popover、手风琴
 ## 介绍
-这是我在学习Vue过程中做的一个UI框架
+咕噜就是轮子，这是我在学习 Vue 的过程中尝试写的一个 UI 框架（造的轮子），希望对你有用是我在学习Vue过程中做的一个UI框架
 
 [![Build Status](https://travis-ci.org/mamba1202/lunzi.svg?branch=master)](https://travis-ci.org/mamba1202/lunzi)
 ## 开始使用
