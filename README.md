@@ -1,4 +1,4 @@
-## 轱辘 - 一个 Vue UI 组件
+## 咕噜UI -用Vue写一个UI组件库
 ## 介绍
 这是我在学习Vue过程中做的一个UI框架
 
@@ -7,44 +7,28 @@
 1. 添加CSS样式
   使用本框架前，请在CSS中开启bordr-box
 
-  ```
+  ```css
   *, *::before, *::after{box-sizing: border-box;}
   ```
   IE8 及以上浏览器都支持此样式
 
-  你还需要设置默认颜色等变量(后续会改为 SCSS 变量)
+2. 安装 gulu-ui
   ```
-  html {
-        --button-height: 32px;
-        --font-size: 14px;
-        --button-bg: white;
-        --button-active-bg: #eee;
-        --border-radius: 4px;
-        --color: #333;
-        --border-color: #999;
-        --border-color-hover: #666;
-    }
-  ```
-  IE15 及以上浏览器都支持此样式。
-
-2. 安装 lunzi
-  ```
-  npm install --save lunzi
+  npm install --save gulu-ui
   ```
 3. 引入lunzi
-  ```
-  import {Button,ButtonGroup,Icon} from "mambazhang"
-  import "mambazhang/dist/index.css"
+  ```js
+  import {Button,} from "gulu-ui"
+  import "gulu-ui/dist/index.css"
 
   export default {
     name: 'app',
     components: {
       "g-button": Button,
-      "g-icon": Icon,
     }
   }
   ```
-4. 引入svg symbols
+4. 引入svg symbols(如需更多icon请自动引入)
   ```
   <script src="//at.alicdn.com/t/font_1121333_q3158vk42o.js"></script>
   ```
@@ -52,10 +36,10 @@
 ## 文档
 
 ## 提问
-
-## 变更记录
-
+[Issues](https://github.com/mamba1202/gulu-ui/issues)
 ## 联系方式
+邮箱: zhangzhe1202@gmail.com
 
 ## 贡献代码
+[Pull request](https://github.com/mamba1202/gulu-ui/pulls)
 
