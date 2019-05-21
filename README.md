@@ -7,25 +7,29 @@
 1. 添加CSS样式
   使用本框架前，请在CSS中开启bordr-box
 
-  ```css
+  ```
   *, *::before, *::after{box-sizing: border-box;}
   ```
   IE8 及以上浏览器都支持此样式
 
 2. 安装 gulu-ui
   ```
-  npm install --save gulu-ui
+  npm install  gulu-ui
+  ```
+  或者
+  ```
+  yarn add gulu-ui
   ```
 3. 引入lunzi
-  ```js
-  import {Button,} from "gulu-ui"
+  ```
+  import {Button} from "gulu-ui"
   import "gulu-ui/dist/index.css"
 
   export default {
     name: 'app',
     components: {
-      "g-button": Button,
-    }
+        "g-button": Button,
+      }
   }
   ```
 4. 引入svg symbols(如需更多icon请自动引入)
