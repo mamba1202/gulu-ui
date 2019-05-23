@@ -1,11 +1,12 @@
 module.exports = {
     title: '咕噜UI',
     description: '一个好用的UI框架',
+    base:"/gulu-ui/",
     themeConfig: {
         nav: [
-            { text: 'Home', link: '/' },
-            { text: 'Guide', link: '/guide/' },
-            { text: 'External', link: 'https://google.com' },
+            { text: '主页', link: '/' },
+            { text: 'GitHub', link: 'https://github.com/mamba1202/' },
+            { text: '欢迎Sart', link: 'https://github.com/mamba1202/lunzi' },
         ],
         sidebar: [
             {
@@ -32,8 +33,9 @@ module.exports = {
                     './components/input',
                     './components/grid',
                     './components/layout',
+                    './components/popover',
+                    './components/collapse',
                     './components/toast',
-                    './components/popover'
                 ],
             }
         ]
