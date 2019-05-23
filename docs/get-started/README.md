@@ -4,18 +4,17 @@ title: 快速上手
 ## 安装
 参考[安装]()章节
 ## 引入咕噜UI
-```
-import {Button,Icon} from "gulu-ui"
+```js
+import { Button } from "gulu-ui"
 import "gulu-ui/dist/index.css"
 
 export default {
   name: 'app',
   components: {
-    "g-button": Button,
-    "g-icon": Icon,
+    "g-button": Button
   }
 ```
 ## 添加CSS样式
-```
-*, *::before, *::after{box-sizing: border-box;}
+```css
+*, *::before, *::after{ box-sizing: border-box; }
 ```
