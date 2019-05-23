@@ -94,8 +94,7 @@ new Vue({
                         console.log('用户说他知道了')
                     }
                 },
-                autoClose: false,
-                autoCloseDelay: 3
+                autoClose: 3,
             })
         }
     }
