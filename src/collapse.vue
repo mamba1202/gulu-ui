@@ -50,7 +50,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-$border-color: grey;
+$border-color: #ddd;
 $border-radius: 4px;
 .collapse {
   border: 1px solid $border-color;

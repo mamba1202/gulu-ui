@@ -1,15 +1,10 @@
 <template>
   <div class="collapseItem">
-    <div
-      class="title"
-      @click="toggle"
-    >{{single}}
+    <div class="title" @click="toggle">
+      {{single}}
       {{title}}
     </div>
-    <div
-      class="content"
-      v-if="open"
-    >
+    <div class="content" v-if="open">
       <slot></slot>
     </div>
   </div>
@@ -21,7 +16,6 @@ export default {
   data() {
     return {
       open: false,
-      single: false
     };
   },
   props: {
@@ -38,33 +32,27 @@ export default {
     this.eventBus &&
       this.eventBus.$on("update:selected", names => {
         if (names.indexOf(this.name) >= 0) {
-          this.show();
+          this.open = true
         } else  {
-            this.close();
+          this.open = false
         }
       });
   },
   methods: {
     toggle() {
       if (this.open) {
- this.eventBus && this.eventBus.$emit("update:removeSelected", this.name);
+       this.eventBus && this.eventBus.$emit("update:removeSelected", this.name);
       } else {
         //this.open = true;
         this.eventBus && this.eventBus.$emit("update:addSelected", this.name);
       }
-    },
-    close() {
-      this.open = false;
-    },
-    show() {
-      this.open = true;
     }
   }
 };
 </script>
 <style scoped lang="scss">
 .collapseItem {
-  $border-color: grey;
+  $border-color: #ddd;
   $border-radius: 4px;
   > .title {
     border: 1px solid $border-color;
@@ -77,6 +65,7 @@ export default {
     align-items: center;
     padding: 0 8px;
     cursor: pointer;
+    background-color: rgb(135, 206, 250);
   }
   &:first-child {
     > .title {
