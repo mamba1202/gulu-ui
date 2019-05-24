@@ -1,28 +1,12 @@
 <template>
-  <div
-    class="wrapper"
-    :class="toastClasses"
-  >
-    <div
-      class="toast"
-      ref="toast"
-    >
+  <div class="gulu-toast" :class="toastClasses">
+    <div class="toast" ref="toast">
       <div class="message">
         <slot v-if="!enableHtml"></slot>
-        <div
-          v-else
-          v-html="$slots.default[0]"
-        ></div>
+        <div v-else v-html="$slots.default[0]"></div>
       </div>
-      <div
-        class="line"
-        ref="line"
-      ></div>
-      <span
-        class="close"
-        v-if="closeButton"
-        @click="onClickClose"
-      >
+      <div class="line" ref="line"></div>
+      <span class="close" v-if="closeButton" @click="onClickClose">
         {{closeButton.text}}
       </span>
     </div>
@@ -31,76 +15,73 @@
 <script>
 //构造组件的选项
 export default {
-  name: "lunzi-toast",
-  props: {
-    autoClose: {
-      type: Boolean,
-      default: true
+    name: 'GuluToast',
+    props: {
+      autoClose: {
+        type: [Boolean, Number],
+        default: 5,
+        validator (value) {
+          return value === false || typeof value === 'number';
+        }
+      },
+      closeButton: {
+        type: Object,
+        default () {
+          return {
+            text: '关闭', callback: undefined
+          }
+        }
+      },
+      enableHtml: {
+        type: Boolean,
+        default: false
+      },
+      position: {
+        type: String,
+        default: 'top',
+        validator (value) {
+          return ['top', 'bottom', 'middle'].indexOf(value) >= 0
+        }
+      }
     },
-    autoCloseDelay: {
-      type: Number,
-      default: 50
+    mounted () {
+      this.updateStyles()
+      this.execAutoClose()
     },
-    closeButton: {
-      type: Object,
-      default() {
+    computed: {
+      toastClasses () {
         return {
-          text: "关闭",
-          callback: undefined
-        };
+          [`position-${this.position}`]: true
+        }
       }
     },
-    enableHtml: {
-      type: Boolean,
-      default: false
-    },
-    position: {
-      type: String,
-      default: "top",
-      validator(value) {
-        return ["top", "bottom", "middle"].indexOf(value) >= 0;
-      }
-    }
-  },
-  mounted() {
-    this.updateStyle();
-    this.execAutoClose();
-  },
-  computed: {
-    toastClasses() {
-      return {
-        [`position-${this.position}`]: true
-      };
-    }
-  },
-  methods: {
-    updateStyle() {
-      this.$nextTick(() => {
-        this.$refs.line.style.height = `${
-          this.$refs.toast.getBoundingClientRect().height
-        }px`;
-      })
-    },
-    execAutoClose() {
-      if (this.autoClose) {
-        setTimeout(() => {
-          this.close();
-        }, this.autoCloseDelay * 1000);
-      }
-    },
-    close() {
-      this.$el.remove();
-      this.$emit("close");
-      this.$destroy();
-    },
-    onClickClose() {
-      this.close();
-      if (this.closeButton && typeof this.closeButton.callback === "function") {
-        this.closeButton.callback();
+    methods: {
+      updateStyles () {
+        this.$nextTick(() => {
+          this.$refs.line.style.height =
+            `${this.$refs.toast.getBoundingClientRect().height}px`
+        })
+      },
+      execAutoClose () {
+        if (this.autoClose) {
+          setTimeout(() => {
+            this.close()
+          }, this.autoClose * 1000)
+        }
+      },
+      close () {
+        this.$el.remove()
+        this.$emit('close')
+        this.$destroy()
+      },
+      onClickClose () {
+        this.close()
+        if (this.closeButton && typeof this.closeButton.callback === 'function') {
+          this.closeButton.callback(this)//this === toast实例
+        }
       }
     }
   }
-};
 </script>
 <style lang="scss" scoped>
 $font-size: 14px;
@@ -136,7 +117,7 @@ $animation-duration: 300ms;
     opacity: 1;
   }
 }
-.wrapper {
+.gulu-toast {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -177,6 +158,7 @@ $animation-duration: 300ms;
   box-shadow: $box-shadow;
   padding: 0 16px;
   border-radius: 4px;
+  cursor:pointer;
   .message {
     padding: 8px 0;
   }
