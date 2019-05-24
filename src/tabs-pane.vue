@@ -18,7 +18,7 @@ export default {
   },
   props: {
     name: {
-      type: Symbol | Number,
+      type: String | Number,
       required: true
     }
   },
