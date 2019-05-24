@@ -15,7 +15,12 @@ export default {
 
 <style lang="scss">
 .g-icon {
-  width: 1em;
-  height: 1em;
+  width: 14px;
+  height: 14px;
+  display: inline-flex;
+  align-items: center
+}
+#i-error{
+  
 }
 </style>
