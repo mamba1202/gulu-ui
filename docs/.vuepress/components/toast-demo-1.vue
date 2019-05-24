@@ -1,6 +1,5 @@
 <template>
   <div style="padding-top: 16px;">
-    <h2>this.$toast</h2>
     <p>
       <strong>预览</strong>
     </p>
