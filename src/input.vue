@@ -1,23 +1,13 @@
 <template>
-  <div
-    class="wrapper"
-    :class="{error}"
-  >
-    <input
-      :value="value"
-      type="text"
-      :disabled="disabled"
-      :readonly="readonly"
+  <div class="wrapper" :class="{error}">
+    <input :value="value" type="text" :disabled="disabled" :readonly="readonly"
       @change="$emit('change',$event.target.value)"
       @input="$emit('input',$event.target.value)"
       @focus="$emit('focus',$event.target.value)"
       @blur="$emit('blur',$event.target.value)"
     >
     <template v-if="error">
-      <icon
-        name="error"
-        class="icon-error"
-      ></icon>
+      <icon name="error" class="icon-error"></icon>
       <span class="errorMessage">{{error}}</span>
     </template>
   </div>
@@ -48,16 +38,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-// html {
-//         --button-height: 32px;
-//         --font-size: 14px;
-//         --button-bg: white;
-//         --button-active-bg: #eee;
-//         --border-radius: 4px;
-//         --color: #333;
-//         --border-color: #999;
-//         --border-color-hover: #666;
-//     }
 $height: 32px;
 $border-color: #999;
 $border-color-hover: #666;
@@ -70,6 +50,7 @@ $red: #f1453d;
   align-items: center;
   font-size: $font-size;
   display: inline-block;
+  box-sizing: border-box;
   > :not(:last-child){
       margin-right: .5em;
   }
@@ -88,7 +69,6 @@ $red: #f1453d;
     }
     &[disabled],
     &[readonly] {
-      border: black;
       color: #bbb;
       cursor: not-allowed;
     }
@@ -96,6 +76,7 @@ $red: #f1453d;
   &.error {
     > input {
       border-color: $red;
+      color: red;
     }
   }
   .icon-error {
@@ -103,6 +84,8 @@ $red: #f1453d;
   }
   .errorMessage {
     color: red;
+    font-size: 14px;
+    margin-left: -5px;
   }
 }
 </style>
