@@ -4,6 +4,7 @@ import Icon from './src/icon'
 import Input from './src/input'
 import Row from './src/row'
 import Col from './src/col'
+import Popover from './src/popover'
 import Layout from './src/layout'
 import Content from './src/content'
 import Header from './src/header'
@@ -16,6 +17,8 @@ import TabsBody from './src/tabs-body'
 import TabsHead from './src/tabs-head'
 import TabsItem from './src/tabs-item'
 import TabsPane from './src/tabs-pane'
+import Collapse from './src/collapse'
+import CollapseItem from './src/collapse-item'
 export {
     Button,
     ButtonGroup,
