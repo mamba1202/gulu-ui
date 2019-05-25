@@ -5,7 +5,7 @@ title: 咕噜UI
 [![Build Status](https://travis-ci.org/mamba1202/gulu-ui.svg?branch=master)](https://travis-ci.org/mamba1202/gulu-ui)(tab组件用例测试待解决)
 
 #### 咕噜UI 是一个好用的UI框架，提供一些常用组件，适合PC端和移动端使用。
-#### 组件:  按钮、输入框、网格、布局、Toast、Tabs、Popover、手风琴(持续更新中)
+#### 组件:  按钮、输入框、网格、布局、Tabs、Toast、Popover、手风琴(持续更新中)
 
 
 ## Why 咕噜UI
