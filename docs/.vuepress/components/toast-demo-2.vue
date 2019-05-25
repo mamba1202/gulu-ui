@@ -32,7 +32,7 @@
           closeButton: {
             text: '知道了',
             callback: () => {
-              console.log('他说知道了')
+              //console.log('他说知道了')
             }
           }
         })
