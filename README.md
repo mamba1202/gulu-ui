@@ -1,5 +1,5 @@
 # 咕噜UI -用Vue写一个UI组件库
-[![Build Status](https://travis-ci.org/mamba1202/gulu-ui.svg?branch=master)](https://travis-ci.org/mamba1202/gulu-ui)(tab组件用例测试待解决)
+[![Build Status](https://travis-ci.org/mamba1202/gulu-ui.svg?branch=master)](https://travis-ci.org/mamba1202/gulu-ui)
 
 
 咕噜UI 是一个好用的UI组件，提供一些常用组件，适合移动和PC端使用
