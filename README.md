@@ -47,7 +47,7 @@
 ## 提问
 [Issues](https://github.com/mamba1202/gulu-ui/issues)
 ## 联系方式
-邮箱: zhangzhe1202@gmail.com
+邮箱: zhangzhe1202@foxmail.com
 
 ## 贡献代码
 [Pull request](https://github.com/mamba1202/gulu-ui/pulls)
