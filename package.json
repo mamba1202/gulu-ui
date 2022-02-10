@@ -26,7 +26,7 @@
   "homepage": "https://github.com/mamba1202/gulu#readme",
   "dependencies": {
     "dev-test": "0.0.1-security",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.16",
     "vue-hot-reload-api": "^2.3.0"
